@@ -25,11 +25,10 @@ class HomeTableTableViewController: UITableViewController {
     }
 
     @objc func loadTweet(){
-    
         
+        numberOfTweet = 20
         let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
-        let myParameters = ["count": 10]
-        
+        let myParameters = ["count": numberOfTweet]
 
         TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: myParameters, success: { (tweets: [NSDictionary]) in
             
@@ -40,6 +39,8 @@ class HomeTableTableViewController: UITableViewController {
             
             // always make sure to reload data
             self.tableView.reloadData()
+            
+            // remove spinning refresh symbol
             self.myRefreshControl.endRefreshing()
             
         }, failure: { (Error) in
@@ -48,6 +49,34 @@ class HomeTableTableViewController: UITableViewController {
  
     }
     
+    func loadMoreTweets(){
+        
+        let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
+        numberOfTweet = numberOfTweet + 20
+        let myParams = ["count": numberOfTweet]
+        
+        TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: myParams as [String : Any], success: { (tweets: [NSDictionary]) in
+            
+            self.tweetArray.removeAll()
+            for tweet in tweets{
+                self.tweetArray.append(tweet)
+            }
+            
+            // always make sure to reload data
+            self.tableView.reloadData()
+            
+        }, failure: { (Error) in
+            print("Could not recieve tweets! oh no!!")
+        })
+    }
+    
+    
+    // happens when user scrolls and is about to reach end
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt IndexPath: IndexPath) {
+        if IndexPath.row + 1 == tweetArray.count{
+            loadMoreTweets()
+        }
+    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "tweetCell", for: indexPath) as! TweetCellTableViewCell
         
@@ -56,6 +85,7 @@ class HomeTableTableViewController: UITableViewController {
         cell.userNameLabel.text = user["name"] as! String
         cell.tweetContent.text = tweetArray[indexPath.row]["text"] as! String
         
+        //cell.tweetContent.sizeToFit()
         
         // Set image
         let imageUrl = URL(string: (user["profile_image_url_https"] as? String)!)

@@ -16,6 +16,7 @@ class TweetCellTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        tweetContent.sizeToFit()
         // Initialization code
     }
 
