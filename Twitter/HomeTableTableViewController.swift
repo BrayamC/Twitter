@@ -23,10 +23,15 @@ class HomeTableTableViewController: UITableViewController {
         myRefreshControl.addTarget(self, action:#selector(loadTweet), for: .valueChanged)
         tableView.refreshControl = myRefreshControl
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        loadTweet()
+    }
 
     @objc func loadTweet(){
         
-        numberOfTweet = 20
+        numberOfTweet = 5
         let myUrl = "https://api.twitter.com/1.1/statuses/home_timeline.json"
         let myParameters = ["count": numberOfTweet]
 
