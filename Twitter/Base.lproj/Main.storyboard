@@ -146,7 +146,7 @@
                                 <action selector="onLogout:" destination="QLc-aN-Kad" id="d8L-20-bqk"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="tweet" image="q" id="nF6-yi-zC2">
+                        <barButtonItem key="rightBarButtonItem" title="tweet" id="nF6-yi-zC2">
                             <color key="tintColor" systemColor="systemBlueColor"/>
                             <connections>
                                 <segue destination="aRx-IW-fyh" kind="presentation" id="jTX-QO-B5P"/>
@@ -258,7 +258,6 @@
     <resources>
         <image name="emptyHeart" width="256" height="256"/>
         <image name="emptyRetweet" width="256" height="256"/>
-        <image name="q" width="128" height="128"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
