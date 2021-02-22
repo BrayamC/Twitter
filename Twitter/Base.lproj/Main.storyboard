@@ -161,18 +161,28 @@
         <!--Item 2-->
         <scene sceneID="GwD-tt-2dB">
             <objects>
-                <viewController id="xEG-ha-yEf" sceneMemberID="viewController">
+                <viewController id="xEG-ha-yEf" customClass="profileViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hpx-RL-UT1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4n-4X-8oK">
+                                <rect key="frame" x="88" y="242" width="123" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6OO-fu-cfH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item 2" id="7lO-24-7vV"/>
+                    <connections>
+                        <outlet property="temp" destination="j4n-4X-8oK" id="1h6-0S-MdU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KVC-By-pfA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="926" y="1487"/>
+            <point key="canvasLocation" x="925.60000000000002" y="1485.6071964017992"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="AAK-BC-A1c">
