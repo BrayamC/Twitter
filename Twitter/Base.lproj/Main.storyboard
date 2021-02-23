@@ -146,7 +146,7 @@
                                 <action selector="onLogout:" destination="QLc-aN-Kad" id="d8L-20-bqk"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="tweet" id="nF6-yi-zC2">
+                        <barButtonItem key="rightBarButtonItem" title="tweet" image="square.and.pencil" catalog="system" id="nF6-yi-zC2">
                             <color key="tintColor" systemColor="systemBlueColor"/>
                             <connections>
                                 <segue destination="aRx-IW-fyh" kind="presentation" id="jTX-QO-B5P"/>
@@ -158,7 +158,7 @@
             </objects>
             <point key="canvasLocation" x="-770" y="2266"/>
         </scene>
-        <!--Item 2-->
+        <!--Profile-->
         <scene sceneID="GwD-tt-2dB">
             <objects>
                 <viewController id="xEG-ha-yEf" customClass="profileViewController" customModule="Twitter" customModuleProvider="target" sceneMemberID="viewController">
@@ -175,7 +175,7 @@
                         <viewLayoutGuide key="safeArea" id="6OO-fu-cfH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="7lO-24-7vV"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle" catalog="system" id="7lO-24-7vV"/>
                     <connections>
                         <outlet property="temp" destination="j4n-4X-8oK" id="1h6-0S-MdU"/>
                     </connections>
@@ -191,7 +191,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kbr-NN-5R2">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <color key="tintColor" systemColor="systemTealColor"/>
                     </tabBar>
                     <connections>
                         <segue destination="t0T-bk-icK" kind="relationship" relationship="viewControllers" id="kKf-hb-5iq"/>
@@ -262,11 +263,11 @@
             </objects>
             <point key="canvasLocation" x="-770" y="3913"/>
         </scene>
-        <!--Item-->
+        <!--Feed-->
         <scene sceneID="878-c9-H40">
             <objects>
                 <navigationController id="t0T-bk-icK" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Fkk-rb-irD"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="rectangle.grid.1x2.fill" catalog="system" id="Fkk-rb-irD"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="TEN-NV-QJl">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -303,6 +304,9 @@
     <resources>
         <image name="emptyHeart" width="256" height="256"/>
         <image name="emptyRetweet" width="256" height="256"/>
+        <image name="person.crop.circle" catalog="system" width="128" height="121"/>
+        <image name="rectangle.grid.1x2.fill" catalog="system" width="128" height="101"/>
+        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
