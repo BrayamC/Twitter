@@ -10,11 +10,14 @@ import UIKit
 
 class profileViewController: UIViewController {
 
-    @IBOutlet weak var temp: UIButton!
+    @IBOutlet weak var profilePicture: UIImageView!
+    @IBOutlet weak var tagLine: UITextField!
+    @IBOutlet weak var numberTweets: UITextField!
+    @IBOutlet weak var numberFollowing: UITextField!
+    @IBOutlet weak var numberFollowers: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        temp.backgroundColor = UIColor.red
         // Do any additional setup after loading the view.
     }
     

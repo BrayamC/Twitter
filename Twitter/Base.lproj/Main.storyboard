@@ -166,18 +166,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j4n-4X-8oK">
-                                <rect key="frame" x="88" y="242" width="123" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="PcD-lD-8CY">
+                                <rect key="frame" x="118" y="97" width="138" height="133"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Tagline" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZKJ-3Z-FZW">
+                                <rect key="frame" x="30" y="55" width="329" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="numberTweets" borderStyle="roundedRect" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cgi-ox-2Qt">
+                                <rect key="frame" x="16" y="254" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="numberFollowing" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="m3I-H2-H34">
+                                <rect key="frame" x="133" y="254" width="101" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="numberFollowers" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="r23-33-wZc">
+                                <rect key="frame" x="262" y="254" width="97" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6OO-fu-cfH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle" catalog="system" id="7lO-24-7vV"/>
                     <connections>
-                        <outlet property="temp" destination="j4n-4X-8oK" id="1h6-0S-MdU"/>
+                        <outlet property="numberFollowers" destination="r23-33-wZc" id="5uu-tP-pvW"/>
+                        <outlet property="numberFollowing" destination="m3I-H2-H34" id="J0D-D1-d7X"/>
+                        <outlet property="numberTweets" destination="cgi-ox-2Qt" id="1nx-et-hdN"/>
+                        <outlet property="profilePicture" destination="PcD-lD-8CY" id="TIi-Rk-UkN"/>
+                        <outlet property="tagLine" destination="ZKJ-3Z-FZW" id="mGq-LY-WFQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KVC-By-pfA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -305,6 +332,7 @@
         <image name="emptyHeart" width="256" height="256"/>
         <image name="emptyRetweet" width="256" height="256"/>
         <image name="person.crop.circle" catalog="system" width="128" height="121"/>
+        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="rectangle.grid.1x2.fill" catalog="system" width="128" height="101"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
