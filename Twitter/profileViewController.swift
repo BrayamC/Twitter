@@ -16,9 +16,8 @@ class profileViewController: UIViewController {
     @IBOutlet weak var numberFollowing: UITextField!
     @IBOutlet weak var numberFollowers: UITextField!
     @IBOutlet weak var backgroundPicture: UIImageView!
-    
-    var userId: Int = -1
-    var screenName: Int = -1
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var screenName: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +40,8 @@ class profileViewController: UIViewController {
             self.numberFollowing.text = String(userInfo["friends_count"] as! Int)
             self.numberFollowers.text = String(userInfo["followers_count"] as! Int)
             self.tagLine.text = userInfo["description"] as! String
-            
+            self.name.text = userInfo["name"] as! String
+            self.screenName.text = userInfo["screen_name"] as! String
             
             // Set image
             var imageUrl = URL(string: (userInfo["profile_image_url_https"] as? String)!)
