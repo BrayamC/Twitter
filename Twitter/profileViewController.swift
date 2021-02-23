@@ -41,7 +41,9 @@ class profileViewController: UIViewController {
             self.numberFollowers.text = String(userInfo["followers_count"] as! Int)
             self.tagLine.text = userInfo["description"] as! String
             self.name.text = userInfo["name"] as! String
-            self.screenName.text = userInfo["screen_name"] as! String
+            
+            let name1 = userInfo["screen_name"] as! String
+            self.screenName.text = "@\(name1)"
             
             // Set image
             var imageUrl = URL(string: (userInfo["profile_image_url_https"] as? String)!)
