@@ -16,20 +16,37 @@ class profileViewController: UIViewController {
     @IBOutlet weak var numberFollowing: UITextField!
     @IBOutlet weak var numberFollowers: UITextField!
     
+    var userId: Int = -1
+    var screenName: Int = -1
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        print("***********-------****************")
+        getUserInfo()
+        print("***********-------****************")
+ 
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @objc func getUserInfo(){
+        
+     let myUrl = "https://api.twitter.com/1.1/account/verify_credentials.json"
+    
+        TwitterAPICaller.client?.getDictionaryRequest(url: myUrl, parameters: [String: String](), success: { (userInfo: NSDictionary) in
+         
+            print(userInfo)
+            
+            self.numberTweets.text = String(userInfo["statuses_count"] as! Int)
+            self.numberFollowing.text = String(userInfo["friends_count"] as! Int)
+            self.numberFollowers.text = String(userInfo["followers_count"] as! Int)
+            self.tagLine.text = userInfo["description"] as! String
+         
+     }, failure: { (Error) in
+         print("Could not recieve user info")
+     })
+        
     }
-    */
-
+    
+    
+ 
 }

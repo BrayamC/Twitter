@@ -26,7 +26,7 @@ class HomeTableTableViewController: UITableViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        loadTweet()
+        //loadTweet()
     }
 
     @objc func loadTweet(){
@@ -36,7 +36,7 @@ class HomeTableTableViewController: UITableViewController {
         let myParameters = ["count": numberOfTweet]
 
         TwitterAPICaller.client?.getDictionariesRequest(url: myUrl, parameters: myParameters as [String : Any], success: { (tweets: [NSDictionary]) in
-            
+            print(tweets)
             self.tweetArray.removeAll()
             for tweet in tweets{
                 self.tweetArray.append(tweet)
