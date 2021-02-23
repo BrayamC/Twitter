@@ -15,6 +15,7 @@ class profileViewController: UIViewController {
     @IBOutlet weak var numberTweets: UITextField!
     @IBOutlet weak var numberFollowing: UITextField!
     @IBOutlet weak var numberFollowers: UITextField!
+    @IBOutlet weak var backgroundPicture: UIImageView!
     
     var userId: Int = -1
     var screenName: Int = -1
@@ -40,7 +41,25 @@ class profileViewController: UIViewController {
             self.numberFollowing.text = String(userInfo["friends_count"] as! Int)
             self.numberFollowers.text = String(userInfo["followers_count"] as! Int)
             self.tagLine.text = userInfo["description"] as! String
-         
+            
+            
+            // Set image
+            var imageUrl = URL(string: (userInfo["profile_image_url_https"] as? String)!)
+            var data = try? Data(contentsOf: imageUrl!)
+            
+            if let imageData = data {
+                self.profilePicture.image = UIImage(data: imageData)
+            }
+            
+            // Set image
+            imageUrl = URL(string: (userInfo["profile_banner_url"] as? String)!)
+            data = try? Data(contentsOf: imageUrl!)
+            
+            if let imageData = data {
+                self.backgroundPicture.image = UIImage(data: imageData)
+            }
+
+            
      }, failure: { (Error) in
          print("Could not recieve user info")
      })
